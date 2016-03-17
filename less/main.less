@@ -1,0 +1,53 @@
+//Main
+@import 'mixins.less';
+html{
+		
+}
+body{
+	font-family: Verdana,Tahoma,sans-serif;
+}
+ul{
+  list-style: none;
+}
+a, a:active, a:focus{
+	@linkColor: #d4d4d4;
+	text-decoration: none;
+	font-family: Verdana,Tahoma,sans-serif;
+	.transi();
+}
+	a:hover{
+		color: #9b9b9b;
+		text-decoration: none;
+	}
+
+//variables
+@mainTextColor: #b5b5bb;
+@linkColor: #d4d4d4;
+@hColor: #b6b6b6;
+@headerWrapperBg: #beba71;
+
+
+h1 {
+	text-align: center;
+	padding: 1em 0;
+	a{
+		color: #fff;
+		text-transform: uppercase;
+		.textShadow(1px,1px,1px,#000);
+		&:hover{
+			color: #4f9764;
+			.textShadow(1px,1px,2px,#000);
+		}
+	}
+}
+.header-wrapper{
+  background: @headerWrapperBg;
+  .boxShadow(0,1px,4px,#000);
+}
+.tabs-ang{
+  margin: 40px;
+}
+.content-section{
+  background: #5bbec3;
+  outline: 1px solid #000088;
+}
