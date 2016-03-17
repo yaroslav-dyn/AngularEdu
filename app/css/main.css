@@ -1,0 +1,41 @@
+body {
+  font-family: Verdana, Tahoma, sans-serif;
+}
+ul {
+  list-style: none;
+}
+a,
+a:active,
+a:focus {
+  text-decoration: none;
+  font-family: Verdana, Tahoma, sans-serif;
+  transition: all 0.2s ease;
+}
+a:hover {
+  color: #9b9b9b;
+  text-decoration: none;
+}
+h1 {
+  text-align: center;
+  padding: 1em 0;
+}
+h1 a {
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #000;
+}
+h1 a:hover {
+  color: #4f9764;
+  text-shadow: 1px 1px 2px #000;
+}
+.header-wrapper {
+  background: #beba71;
+  box-shadow: 0 1px 4px #000;
+}
+.tabs-ang {
+  margin: 40px;
+}
+.content-section {
+  background: #5bbec3;
+  outline: 1px solid #000088;
+}
