@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testMod">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular</title>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="app/css/main.css">
+
+</head>
+<body ng-controller="testController as tcontr">
+	<header>
+		<div class="header-wrapper">
+			<h1><a href="/">Angular</a></h1>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<section class="content-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4" ng-repeat="product in tcontr.products">
+							<h2>
+								{{product.name}}
+							</h2>
+
+							<p>{{product.description}}</p>
+
+							<p>{{product.price}}</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--tabs angular-->
+			<section>
+				<div class="tabs-ang" ng-controller="PanelController as panel">
+					<ul class="nav nav-pills">
+						<li ng-class="{panel:isSelected(1)}"><a href ng-click="panel.selectTab(1)">Descr</a></li>
+						<li ng-class="{panel:isSelected(2)}"><a href ng-click="panel.selectTab(2)">Specif</a></li>
+						<li ng-class="{panel:isSelected(3)}"><a href ng-click="panel.selectTab(3)">Reviews</a></li>
+					</ul>
+					<div class="panel" ng-show="panel.isSelected(1)">
+						<h4>Descr</h4>
+
+						<p>{{product.description}}</p>
+					</div>
+				</div>
+			</section>
+			<section class="loft" ng-controller="listRepeat">
+
+				<h3><strong><i>{{title}}</i></strong></h3>
+				<ul>
+					<li><input type="text" ng-model="query"/></li>
+					<li><input type="checkbox" ng-model="statusL"></li>
+					<li ng-repeat="message in messages | filter:complexFilter && query">
+						<h4>{{message.name}}</h4>
+						<span>{{message.text}}</span>
+					</li>
+					<li>
+						<b>Total: {{messages.length}}</b>
+					</li>
+					<li>{{today | date: "dd/MM/yyyy" | uppercase}}</li>
+				</ul>
+
+				<table class="table table-striped">
+					<tr class="bg-success">
+						<th ng-click="sort('name')">
+							<a>Name
+								<span class="glyphicon" ng-class="{'glyphicon-chevron-up' : isSortUp('name'),'glyphicon-chevron-down' : isSortDown('name')}"></span></a>
+						</th>
+						<th ng-click="sort('text')">
+							 <a>Message: <span class="glyphicon" ng-class="{'glyphicon-chevron-up' : isSortUp('text'),'glyphicon-chevron-down' : isSortDown('text')}"></span></a>
+						</th>
+					</tr>
+					<tr ng-repeat="message in messages | orderBy:sortField:reverse">
+						<td>{{message.name}}</td>
+						<td>{{message.text}}</td>
+					</tr>
+				</table>
+
+			</section>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

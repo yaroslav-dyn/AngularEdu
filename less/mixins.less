@@ -1,0 +1,25 @@
+		//mixins
+//text shadow
+.textShadow(@xc,@xy,@blur,@shColor){
+  text-shadow: @arguments;
+}
+//box-shadow
+.boxShadow(@xs:1px,@xy:1px,@blur:1px,@shColor:#000){
+  box-shadow: @arguments;
+}
+//transition standart
+.transi(@timeTrans:0.2s){
+  transition: all @timeTrans ease;
+}
+//border-radius
+.borderRad(@rad){
+  border-radius: @arguments;
+}
+		//custom classes
+//image responsive
+.imgRespon{
+  width: 100%;
+  height: auto;
+}
+
+
