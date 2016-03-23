@@ -1,5 +1,20 @@
+.video-full-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+}
+html {
+  overflow-x: hidden;
+}
 body {
   font-family: Verdana, Tahoma, sans-serif;
+  font-size: 16px;
 }
 ul {
   list-style: none;
@@ -11,13 +26,25 @@ a:focus {
   font-family: Verdana, Tahoma, sans-serif;
   transition: all 0.2s ease;
 }
+code {
+  background: rgba(255, 255, 255, 0.7);
+  color: #B33958;
+}
 a:hover {
   color: #9b9b9b;
   text-decoration: none;
 }
+.section-padding {
+  margin-bottom: 12px;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
 h1 {
   text-align: center;
-  padding: 1em 0;
 }
 h1 a {
   color: #fff;
@@ -25,11 +52,23 @@ h1 a {
   text-shadow: 1px 1px 1px #000;
 }
 h1 a:hover {
-  color: #4f9764;
-  text-shadow: 1px 1px 2px #000;
+  color: #8eb6c5;
+  text-shadow: 0 0 2px #000;
+}
+h1 span {
+  display: block;
+  color: #FBFBFB;
+  font-size: 0.4em;
+}
+h3 {
+  color: #fff;
+  padding-bottom: 8px;
 }
 .header-wrapper {
-  background: #beba71;
+  padding: 1em 0;
+}
+.header-wrapper {
+  background: rgba(87, 194, 218, 0.8);
   box-shadow: 0 1px 4px #000;
 }
 .tabs-ang {
@@ -48,10 +87,182 @@ h1 a:hover {
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
   display: inline-block;
+  float: left;
+}
+.vector-img a {
+  color: #fff;
+  width: 100%;
 }
 .vector-img img {
   width: 100px;
+  display: block;
 }
 .vector-img:hover {
   background: rgba(39, 106, 34, 0.6);
+}
+.pyramid .container-fluid {
+  padding: 0;
+}
+.pyr-wrap {
+  font-size: 0.8em;
+  box-shadow: 0 1px 4px #000;
+}
+.pyr-wrap p {
+  padding: 0 12px;
+}
+.pyr-wrap .plate {
+  background: #5BAED2;
+  position: relative;
+  color: #fff;
+  min-width: 27%;
+  width: 31%;
+  min-height: 146px;
+  max-height: 172px;
+  margin-right: 2.6%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em;
+  text-align: justify;
+}
+.pyr-wrap .plate img {
+  width: 50px;
+  padding-right: 1em;
+  float: left;
+}
+.pyr-wrap .plate:after,
+.pyr-wrap .plate:before {
+  content: "";
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  right: -8%;
+  top: 0;
+  background: #5BAED2;
+  z-index: -1;
+}
+.pyr-wrap .plate:last-child {
+  margin-right: 0;
+}
+.pyr-wrap .plate:nth-of-type(1):before {
+  content: "";
+}
+.pyr-wrap .plate:nth-of-type(1):after {
+  left: 8%;
+  content: "";
+  transform: skewX(10deg);
+}
+.pyr-wrap .plate:nth-of-type(2n) {
+  background: #6fb8d7;
+}
+.pyr-wrap .plate:nth-of-type(2n):before {
+  content: "";
+  left: -8%;
+  margin-left: 4%;
+  transform: skewX(10deg);
+  background: #6fb8d7;
+}
+.pyr-wrap .plate:nth-of-type(2n):after {
+  content: "";
+  transform: skewX(-10deg);
+  background: #6fb8d7;
+}
+.pyr-wrap .plate:last-child {
+  background: #83c2dd;
+}
+.pyr-wrap .plate:last-child:before {
+  content: "";
+  left: -8%;
+  margin-left: 4%;
+  transform: skewX(-10deg);
+  background: #83c2dd;
+}
+.pyr-wrap .plate:last-child:after {
+  background: #83c2dd;
+  content: "";
+}
+.central-section {
+  color: #5F5353;
+  box-shadow: 0 1px 4px #000;
+}
+.central-section > div {
+  background: #ebf5fa;
+}
+.central-section .container-fluid {
+  padding: 0;
+  margin: 0;
+}
+.central-section h3 {
+  background: rgba(87, 194, 218, 0.8);
+  text-shadow: 0 0 1px #000;
+  padding: 1em 0;
+}
+.central-section .col-md-6 {
+  background: #CAECF7;
+  padding: 0 2%;
+}
+.central-section .col-md-8 {
+  border-right: 1px dotted #d4d4d4;
+}
+.central-section .form-text {
+  margin-top: 1%;
+  padding-left: 4%;
+}
+.central-section ul {
+  padding-left: 0;
+}
+.central-section ul li {
+  display: inline-block;
+  padding-bottom: 1%;
+  min-width: 210px;
+}
+.central-section label {
+  padding: 0 14px;
+  vertical-align: sub;
+  font-size: 0.9em;
+}
+.central-section input[type=text],
+.central-section textarea,
+.central-section select {
+  width: 360px;
+  padding: 8px;
+  vertical-align: top;
+  border-radius: 5px;
+  border: 1px solid #b5b5bb;
+  color: #b5b5bb;
+}
+.central-section select {
+  width: 350px;
+}
+.central-section input[placeholder] {
+  color: #077D09;
+  width: 348px;
+}
+.filt-wrapper {
+  background: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  padding: 1em;
+  margin-top: 2%;
+  box-shadow: 0 1px 2px #000;
+}
+.filt-wrapper p {
+  font-weight: bold;
+}
+.filt-wrapper span {
+  color: #077D09;
+  font-weight: normal;
+}
+@media all and (max-width: 1440px) {
+  .pyr-wrap .plate {
+    min-height: 163px;
+  }
+  .central-section ul li {
+    display: block;
+    float: none;
+  }
+  .central-section ul li input[placeholder] {
+    margin-left: 0;
+    width: 360px;
+  }
 }

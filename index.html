@@ -6,27 +6,152 @@
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="app/css/main.css">
 </head>
-<body ng-controller="testController as tcontr">
+<body>
 	<header>
-		<div class="header-wrapper">
-			<h1><a href="/">Angular</a></h1>
-		</div>
+		<div class="header-wrapper section-padding" ng-controller="headerController as hd">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="code-example">
+							<h3>{{hd.headerCodes[0].captionSnip}}</h3>
+							<code>
+								{{hd.headerCodes[0].codeSnip}}
+							</code>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<h1>
+							<a href="/">Angular</a>
+							<span>I will know what is the '$scope"</span>
+						</h1>
+					</div>
+					<div class="col-md-4">
+						<div class="code-example">
+							<h3>{{hd.headerCodes[1].captionSnip}}</h3>
+							<code>
+								{{hd.headerCodes[1].codeSnip}}
+							</code>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>	<!-- End header-wrapper-->
 	</header>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12" ng-controller="testController as tc">
-				<div class="item-wrapper">				
-					<div class="item vector-img" ng-repeat = "imgVector in imgVectors">
-						<p>{{imgVector.name}}</p>
-						<img ng-src="{{imgVector.image}}">
+	<section class="pyramid section-padding" ng-controller="testController as tc">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="pyr-wrap">
+						<div class="plate" ng-repeat = "imgVector in tc.imgVectors">
+							<p class="plate-text clearfix">
+								<a href="#"><img ng-src="{{imgVector.image}}"></a>
+								{{imgVector.description}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</section>
+	<section class="central-section" ng-controller="centralSection as cenSec">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="text-center">
+						{{cenSec.cenContent[0].hyper}}
+					</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-center">
+					<h4>
+						{{cenSec.cenContent[0].hyper}}
+					</h4>
+					<p>
+						<code>
+							{{cenSec.cenContent[0].hyperCode}}
+						</code>
+					</p>
+				</div>
+				<div class="col-md-6 text-center">
+					<h4>{{cenSec.cenContent[1].hyper}}</h4>
+					<p>
+						<code>
+							{{cenSec.cenContent[1].hyperCode}}
+						</code>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="text-center">
+						{{cenSec.cenContent[2].hyper}}
+					</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="sub-section">
+					<div class="col-md-8">
+						<form action="#" id="formAngular" class="form-text">
+							<ul>
+								<li>
+									<label for="valueIn">Enter you text:</label>
+								</li>
+								<li>
+									<input type="text" id="valueIn" ng-model="valueIn">
+								</li>
+								<li><label for="valueInit">Your text will be here</label></li>
+								<li>
+									<input type="text" id="valueInit" value="{{valueIn}}" placeholder="Your text">
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<label for="textIh">field filter (A-Z):</label>
+								</li>
+								<li>
+									<input type="text" id="textIh" ng-model="queryFilt">
+								</li>
+								<li>
+									<label for="selectField">Filter by select</label>
+								</li>
+								<li>
+									<select name="selectField" id="selectField" ng-model="orderBy">
+										<option value="name">Name(A-Z)</option>
+										<option value="status">Status</option>
+									</select>
+								</li>
+							</ul>
+							<article class = "filt-wrapper">
+								<p ng-repeat="elem in cenSec.filterSearch |filter:{$:queryFilt} | orderBy:orderBy">
+									{{elem.name}}:
+									<span>{{elem.property}}</span>
+								</p>
+							</article>
+						</form>
+					</div>
+					<div class="col-md-4">
+						<div class="model-wrapper">
+							<p>
+								<h4>
+									{{cenSec.cenContent[2].hyperCode[0].hpH}}
+								</h4>
+								<code>
+									{{cenSec.cenContent[2].hyperCode[0].hpCode}}
+								</code>
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
-	<script type="text/javascript" src="node_modules/angular/angular.js"></script>
-	<script type="text/javascript" src="app.js"></script>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/angular/angular.js"></script>
+	<script src="node_modules/jquery.equalheights/jquery.equalheights.min.js"></script>
+	<script src="app.js"></script>
+	<script src="libs/main.js"></script>
 </body>
 </html>

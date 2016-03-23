@@ -18,8 +18,9 @@ gulp.task('serv', function() {
     browserSync.init({
         server: "./"
     });
-    gulp.watch("*.html" ).on('change', browserSync.reload);
-    gulp.watch("css/*.css" ).on('change', browserSync.reload);
+    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch("*.js" ).on('change', browserSync.reload);
+    gulp.watch("app/**/*.css" ).on('change', browserSync.reload);
     gulp.watch('less/*.less',['less']).on('change', browserSync.reload);
 });
 
