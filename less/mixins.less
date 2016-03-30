@@ -7,7 +7,7 @@
 .boxShadow(@xs:1px,@xy:1px,@blur:1px,@shColor:#000){
   box-shadow: @arguments;
 }
-//transition standart
+//transition standard
 .transi(@timeTrans:0.2s){
   transition: all @timeTrans ease;
 }
@@ -21,7 +21,7 @@
   width: 100%;
   height: auto;
 }
-
+//full screen video on top
 .video-full-screen {
   position: absolute;
   top: 0;
@@ -34,5 +34,14 @@
   overflow: hidden;
 }
 
-
+//emulate table vs div
+.table-div-container{
+  display: table;
+  .table-div-row{
+    display: table-row;
+  }
+  .table-div-col{
+    display: table-cell;
+  }
+}
 

@@ -46,6 +46,28 @@
 		this.cenContent = gems;
 		this.filterSearch = gemsSearch;
 	});
+	//template directive
+	app.controller('templateController',['$scope', function($scope){
+		$scope.templCosts = {
+			'name': 'Nick',
+			'lastName':'Jordan'
+		};
+	}])
+		.directive('customPagePlus', function(){
+			return {
+				templateUrl: 'custom-page.html'
+			};
+		});
+
+	app.controller('voloContr', function($scope){
+		$scope.templCosts = {
+			'name': 'Nick',
+			'lastName':'Jordan'
+		};
+	});
+
+
+
 	var gems = [
 		{
 			"hyper": "Include first conrtoller in your html",
@@ -57,10 +79,17 @@
 		},
 		{
 			"hyper":"Use ng-model from input",
-			"hyperCode":[{
-				"hpH":"this is a magic Angular",
-				"hpCode":"Input: <input ng-modal='inInput'> Output: <div>{{'inInput'}}</div>"
-			}]
+			"hyperCode":
+				[
+					{
+						"hpH" : "this is a magic Angular",
+						"hpCode" : "Input: <input ng-modal='inInput'> Output: <div>{{'inInput'}}</div>"
+					},
+					{
+						"hpH" : "Add user element",
+						"hpCode" : ""
+					}
+				]
 		}
 	];
 	var gemsSearch = [

@@ -118,7 +118,7 @@
 								</li>
 								<li>
 									<select name="selectField" id="selectField" ng-model="orderBy">
-										<option value="name">Name(A-Z)</option>
+										<option value="name" selected>Name(A-Z)</option>
 										<option value="status">Status</option>
 									</select>
 								</li>
@@ -141,13 +141,40 @@
 									{{cenSec.cenContent[2].hyperCode[0].hpCode}}
 								</code>
 							</p>
+							<p>
+								<h4>{{cenSec.cenContent[2].hyperCode[1].hpH}}</h4>
+							</p>
+							<div class="table-div-container add-tag">
+								<div class="table-div-row">
+									<div class="table-div-col">
+										<input type="text"/>
+									</div>
+									<div class="table-div-col">
+										<input type="submit" value="ADD" class="submit-add">
+									</div>
+								</div>
+								<p></p>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-12" ng-controller="voloContr as volo">
+
+					<ul>
+						<li ng-repeat="templCost in volo.templCosts">{{templCost.name}} </li>
+					</ul>
+
+					<div Custom-page-plus></div>
+
+				</div>
+			</div>
 		</div>
 	</section>
-
+	<section id = "js-obj">
+		<ul></ul>
+	</section>
 	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="node_modules/angular/angular.js"></script>
 	<script src="node_modules/jquery.equalheights/jquery.equalheights.min.js"></script>

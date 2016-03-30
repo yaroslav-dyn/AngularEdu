@@ -9,6 +9,15 @@
   z-index: -1000;
   overflow: hidden;
 }
+.table-div-container {
+  display: table;
+}
+.table-div-container .table-div-row {
+  display: table-row;
+}
+.table-div-container .table-div-col {
+  display: table-cell;
+}
 html {
   overflow-x: hidden;
 }
@@ -252,6 +261,23 @@ h3 {
 .filt-wrapper span {
   color: #077D09;
   font-weight: normal;
+}
+.add-tag .table-div-col {
+  vertical-align: middle;
+}
+.add-tag .submit-add {
+  margin-left: 8px;
+  background: #5BAED2;
+  border: none;
+  color: #fff;
+  padding: 7px;
+  border-radius: 6px;
+}
+.add-tag .submit-add:hover {
+  background: rgba(108, 202, 223, 0.8);
+}
+.add-tag .submit-add:focus {
+  outline: 0;
 }
 @media all and (max-width: 1440px) {
   .pyr-wrap .plate {
